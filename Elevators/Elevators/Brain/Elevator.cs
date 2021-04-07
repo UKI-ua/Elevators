@@ -17,7 +17,7 @@ namespace Elevators.Brain
             Name = name;
         }
 
-        public void TakePassenger(int floor)
+        public void TakePassenger(int floor)                    //goes for passenger
         {
             if (IsDoorsOpen)
             {
@@ -28,6 +28,6 @@ namespace Elevators.Brain
             Console.WriteLine($">{Name}:Open doors");
             CertainFloor = floor;
         }
-        public abstract void Ride(int floor);
+        public abstract void Ride(int floor);                   //transport passenger
     }
 }

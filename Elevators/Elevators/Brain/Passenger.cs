@@ -17,18 +17,18 @@ namespace Elevators.Brain
         {
             switch (CertainFloor)
             {
-                case 9:
+                case 9:                                             // only elevator B can reach 10th floor
                     B.TakePassenger(CertainFloor);
                     Console.WriteLine("Choose the floor:");
                     B.Ride(int.Parse(Console.ReadLine()));
                     break;
-                case -1:
+                case -1:                                            // only elevator A can go down on -first floor
                     A.TakePassenger(CertainFloor);
                     Console.WriteLine("Choose the floor:");
                     A.Ride(int.Parse(Console.ReadLine()));
                     break;
                 default:
-                    if (Math.Abs(A.CertainFloor - CertainFloor) < Math.Abs(B.CertainFloor - CertainFloor) || A.CertainFloor == B.CertainFloor)
+                    if (Math.Abs(A.CertainFloor - CertainFloor) < Math.Abs(B.CertainFloor - CertainFloor))  // checkin which elevator is closer to passenger
                     {
                         A.TakePassenger(CertainFloor);
                         Console.WriteLine("Choose the floor:");
@@ -48,18 +48,18 @@ namespace Elevators.Brain
         {
             switch (CertainFloor)
             {
-                case 0:
+                case 0:                                                 // only elevator A can go down on -first floor
                     A.TakePassenger(CertainFloor);
                     Console.WriteLine("Choose the floor:");
                     A.Ride(int.Parse(Console.ReadLine()));
                     break;
-                case 10:
+                case 10:                                                // only elevator B can reach 10th floor
                     B.TakePassenger(CertainFloor);
                     Console.WriteLine("Choose the floor:");
                     B.Ride(int.Parse(Console.ReadLine()));
                     break;
                 default:
-                    if (Math.Abs(A.CertainFloor - CertainFloor) < Math.Abs(B.CertainFloor - CertainFloor))
+                    if (Math.Abs(A.CertainFloor - CertainFloor) < Math.Abs(B.CertainFloor - CertainFloor))  // checkin which elevator is closer to passenger
                     {
                         A.TakePassenger(CertainFloor);
                         Console.WriteLine("Choose the floor:");

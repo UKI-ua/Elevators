@@ -4,7 +4,7 @@ namespace Elevators.Brain
 {
     class ElevatorB : Elevator
     {
-        private const int unAvailableFloor = -1;
+        private const int inaccessibleFloor = -1;
 
         public ElevatorB(string name) :
             base(name)
@@ -13,7 +13,7 @@ namespace Elevators.Brain
 
         public override void Ride(int floor)
         {
-            if (floor == unAvailableFloor)
+            if (floor == inaccessibleFloor)
             {
                 Console.WriteLine($">{Name}:Close doors");
                 Console.WriteLine($">{Name}:Move to 0");
